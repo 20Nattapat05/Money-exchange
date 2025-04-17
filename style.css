@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.ts-control {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.p-create {
+    padding: .7rem;
+}
+
+.center-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card-hight {
+    height: 265px;
+    overflow-y: auto;
+}
+
+.btn-switch {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: gray !important;
+    border-color: gray !important;
+    color: white;
+}
+
+.btn-switch:hover {
+    color: white;
+}
+
+body.theme-blue #resultContainer {
+    color: white !important;
+}
+
+body.theme-blue .ts-control,
+body.theme-blue .ts-dropdown,
+body.theme-blue .ts-control input {
+    background-color: #2a4d6b !important;
+    color: #ffffff !important;
+    border-color: #004d99 !important;
+}
+
+body.theme-blue .ts-dropdown .option {
+    background-color: #2a4d6b;
+    color: white;
+}
+
+body.theme-blue .ts-dropdown .active {
+    background-color: #004d99;
+}
+
+body.theme-blue #resultContainer {
+    color: white;
+}
+
+body.theme-green {
+    background: linear-gradient(135deg, #a8e6cf, #dcedc8);
+    color: #2e7d32;
+}
+
+body.theme-blue {
+    background: linear-gradient(135deg, #1e3a5f, #2a4d6b);
+    color: #ffffff;
+}
+
+body.theme-green .btn-primary {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+}
+
+body.theme-green .btn-primary:hover {
+    background-color: #388E3C;
+    border-color: #388E3C;
+}
+
+body.theme-blue .btn-primary {
+    background-color: #004a99;
+    border-color: #004a99;
+}
+
+body.theme-blue .btn-primary:hover {
+    background-color: #003366;
+    border-color: #003366;
+}
+
+body.theme-blue .form-control,
+body.theme-blue .form-select {
+    background-color: #2a4d6b;
+    border: 1px solid #004d99;
+    color: #ffffff;
+}
+
+body.theme-blue .form-control:focus,
+body.theme-blue .form-select:focus {
+    border-color: #0066cc;
+    box-shadow: 0 0 0 0.2rem rgba(0, 102, 204, 0.5);
+}
+
+body.theme-blue .card {
+    background-color: #1e3a5f;
+    color: #ffffff;
+}
+
+body.theme-blue .form-label {
+    color: #ffffff;
+}
+
+body.theme-blue #resultContainer div {
+    background-color: #0a3a57;
+    border: 1px solid #0066cc;
+    color: #ffffff;
+}

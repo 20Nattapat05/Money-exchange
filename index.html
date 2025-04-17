@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Money exchange</title>
+    <link rel="icon" href="profits.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="theme-green">
+    <button id="switchTheme" class="btn btn-switch rounded-pill"><i class="fa-solid fa-moon"></i></button>
+    <div class="container">
+        <div class="row center-card">
+            <div class="col-md-12">
+                <div class="card shadow my-3 py-4 px-2">
+                    <div class="card-body">
+                        <h3 class="text-center mb-5">ระบบแปลงสกุลเงินหลายสกุล</h3>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label for="amount" class="form-label">จำนวน:</label>
+                                                    <input type="number" class="form-control p-create" id="amount"
+                                                        value="100" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label for="fromCurrency" class="form-label">สกุลเงินต้น :</label>
+                                                    <select id="fromCurrency" class="form-select"></select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="toCurrencies" class="form-label">สกุลเงินที่ต้องการ
+                                                (เลือกได้หลายสกุล) :</label>
+                                            <select id="toCurrencies" class="form-select" multiple></select>
+                                        </div>
+
+                                        <button id="submitBtn" class="btn btn-primary w-100">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card card-hight">
+                                    <div class="card-body">
+                                        <div id="resultContainer" class="text-muted text-center">
+                                            - กรุณาเลือกสกุลที่ต้องการแปลง -
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.getElementById("switchTheme").addEventListener("click", function () {
+            const body = document.body;
+            if (body.classList.contains("theme-green")) {
+                body.classList.remove("theme-green");
+                body.classList.add("theme-blue");
+            } else {
+                body.classList.remove("theme-blue");
+                body.classList.add("theme-green");
+            }
+        });
+
+    </script>
+</body>
+
+</html>
