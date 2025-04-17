@@ -28,11 +28,68 @@ function loadCurrencies() {
       new TomSelect("#fromCurrency", {
         placeholder: "กรุณาเลือกสกุลเงิน",
         allowEmptyOption: true,
-        create: false,
         maxItems: 1,
         persist: false,
         searchField: ["text"],
+        render: {
+          option: function (data, escape) {
+            return `<div>
+              <img src="https://flagcdn.com/24x18/${data.value.slice(0, 2).toLowerCase()}.png" 
+                   onerror="this.style.display='none'" 
+                   alt="flag" class="me-2" 
+                   style="width: 24px; height: 18px; vertical-align: middle;" />
+              ${escape(data.text)}
+            </div>`;
+          },
+          item: function (data, escape) {
+            return `<div>
+              <img src="https://flagcdn.com/24x18/${data.value.slice(0, 2).toLowerCase()}.png" 
+                   onerror="this.style.display='none'" 
+                   alt="flag" class="me-2" 
+                   style="width: 24px; height: 18px; vertical-align: middle;" />
+              ${escape(data.text)}
+            </div>`;
+          }
+        }
       });
+
+
+      new TomSelect("#toCurrencies", {
+        placeholder: "กรุณาเลือกหลายสกุลเงิน",
+        plugins: ["remove_button"],
+        create: false,
+        persist: false,
+        searchField: ["text"],
+        render: {
+          option: function (data, escape) {
+            return `<div>
+              <img src="https://flagcdn.com/24x18/${data.value.slice(0, 2).toLowerCase()}.png" 
+                   onerror="this.style.display='none'" 
+                   alt="flag" class="me-2" 
+                   style="width: 24px; height: 18px; vertical-align: middle;" />
+              ${escape(data.text)}
+            </div>`;
+          },
+          item: function (data, escape) {
+            return `<div>
+              <img src="https://flagcdn.com/24x18/${data.value.slice(0, 2).toLowerCase()}.png" 
+                   onerror="this.style.display='none'" 
+                   alt="flag" class="me-2" 
+                   style="width: 24px; height: 18px; vertical-align: middle;" />
+              ${escape(data.text)}
+            </div>`;
+          }
+        },
+        onChange() {
+          const control = this.control_input;
+          control.placeholder = this.items.length ? "" : "กรุณาเลือกหลายสกุลเงิน";
+          this.inputState();
+          this.setTextboxValue("");
+          this.refreshOptions();
+        }
+      });
+
+
 
       const toSelect = new TomSelect("#toCurrencies", {
         placeholder: "กรุณาเลือกหลายสกุลเงิน",
