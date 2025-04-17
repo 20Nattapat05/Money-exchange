@@ -31,7 +31,7 @@
 }
 
 .btn-switch {
-    position: absolute;
+    position: fixed;
     bottom: 20px;
     right: 20px;
     background-color: gray !important;
