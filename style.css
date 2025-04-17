@@ -37,6 +37,7 @@
     background-color: gray !important;
     border-color: gray !important;
     color: white;
+    z-index: 2;
 }
 
 .btn-switch:hover {
